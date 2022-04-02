@@ -1,24 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="appleforIn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🐸" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0V-hl-JrH">
+                                <rect key="frame" x="10" y="398" width="355" height="330"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="330" id="6Xt-br-UE4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7cn-1L-c3Y">
+                                <rect key="frame" x="8" y="105" width="359" height="32"/>
+                                <segments>
+                                    <segment title="三角"/>
+                                    <segment title="正方形"/>
+                                    <segment title="金字塔"/>
+                                    <segment title="菱形"/>
+                                    <segment title="九九乘法表" width="80"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changedValue:" destination="BYZ-38-t0r" eventType="valueChanged" id="9ja-kA-FY3"/>
+                                </connections>
+                            </segmentedControl>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="UDs-M4-Kuw">
+                                <rect key="frame" x="38" y="181" width="233" height="30"/>
+                                <color key="tintColor" red="0.66666668650000005" green="0.66666668650000005" blue="0.66666668650000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="229" id="R52-I4-OOH"/>
+                                    <constraint firstAttribute="height" constant="29" id="oxc-mM-raI"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="chagneCount:" destination="BYZ-38-t0r" eventType="valueChanged" id="9E8-1o-Jea"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZMr-Fm-B8b">
+                                <rect key="frame" x="284" y="185.33333333333334" width="51" height="20.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="g0V-hl-JrH" secondAttribute="bottom" constant="50" id="Eto-mR-hjU"/>
+                            <constraint firstItem="g0V-hl-JrH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="NWX-6P-IeG"/>
+                            <constraint firstItem="UDs-M4-Kuw" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="181" id="Npt-Iy-nPI"/>
+                            <constraint firstItem="UDs-M4-Kuw" firstAttribute="centerY" secondItem="ZMr-Fm-B8b" secondAttribute="centerY" id="SsI-gv-d7Q"/>
+                            <constraint firstItem="7cn-1L-c3Y" firstAttribute="centerX" secondItem="g0V-hl-JrH" secondAttribute="centerX" id="YWG-vI-Inb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZMr-Fm-B8b" secondAttribute="trailing" constant="40" id="aWI-PB-fUg"/>
+                            <constraint firstItem="7cn-1L-c3Y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="ePE-hA-dcS"/>
+                            <constraint firstItem="UDs-M4-Kuw" firstAttribute="top" secondItem="7cn-1L-c3Y" secondAttribute="bottom" constant="45" id="feK-5o-bVN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="g0V-hl-JrH" secondAttribute="trailing" constant="10" id="jkQ-kX-m5m"/>
+                            <constraint firstItem="ZMr-Fm-B8b" firstAttribute="leading" secondItem="UDs-M4-Kuw" secondAttribute="trailing" constant="15" id="k6K-lz-fsZ"/>
+                            <constraint firstItem="UDs-M4-Kuw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="zkB-IG-ysm"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="frogLabel" destination="g0V-hl-JrH" id="brB-69-xgI"/>
+                        <outlet property="frogSlider" destination="UDs-M4-Kuw" id="E4d-sE-sNx"/>
+                        <outlet property="styleSegmentedControl" destination="7cn-1L-c3Y" id="TJo-08-bWg"/>
+                        <outlet property="valueLabel" destination="ZMr-Fm-B8b" id="rCC-rR-fZn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="519" y="87"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
